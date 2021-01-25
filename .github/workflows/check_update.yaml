@@ -1,0 +1,18 @@
+name: Keep xray-core to latest version.
+on:
+  repository_dispatch:
+  schedule:
+    - cron: "0 */3 * * *"
+  push:
+    branches:
+      - '**'
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Run check_update.sh
+        run: bash check_update.sh
