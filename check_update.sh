@@ -16,7 +16,7 @@ V_VERSION="${V_VERSION:1}"
 
 echo "latest version: $V_VERSION"
 
-if grep -q "version \"$V_VERSION\"" xray.rb; then
+if grep -q "version \"$V_VERSION\"" Formula/xray.rb; then
     echo "It is already the latest version!"
     exit 0
 fi
