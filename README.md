@@ -1,6 +1,8 @@
 # homebrew-Xray
 The homebrew tap for [Xray-core](https://github.com/XTLS/Xray-core).
 
+This tap replaces the `geoip.dat` and `geosite.dat` files in the Xray-core project with [Loyalsoldier/v2ray-rules-dat](https://github.com/Loyalsoldier/v2ray-rules-dat).
+
 ## Install Xray-core
 
 ``` bash
@@ -39,4 +41,3 @@ run Xray-core and register it to launch at login:
 ``` bash
 brew services start xray
 ```
-
