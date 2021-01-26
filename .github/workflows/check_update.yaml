@@ -14,3 +14,9 @@ jobs:
 
       - name: Run check_update.sh
         run: bash check_update.sh
+        
+      - name: Delete workflow runs
+        uses: GitRML/delete-workflow-runs@main
+        with:
+          retain_days: 1
+          keep_minimum_runs: 6
