@@ -1,9 +1,9 @@
 name: Keep xray-core to latest version.
 on:
-  repository_dispatch:
   workflow_dispatch:
-  schedule:
-    - cron: "0 */3 * * *"
+  
+#   schedule:
+#     - cron: "0 */3 * * *"
 
 jobs:
   update:
