@@ -90,7 +90,7 @@ git config --local user.name "actions"
 git config --local user.email "action@github.com"
 
 if [ $ALREADY_LATEST ]; then
-    git commit -am "Automated update geoip.dat or geosite.dat"
+    git commit -am "Automated update resources"
 else
     git commit -am "Automated update xray-core version v$V_VERSION"
 fi
