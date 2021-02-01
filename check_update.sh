@@ -16,10 +16,10 @@ V_VERSION="${V_VERSION:1}"
 
 echo "latest version: $V_VERSION"
 
-# if grep -q "version \"$V_VERSION\"" Formula/xray.rb; then
-#     echo "It is already the latest version!"
-#     exit 0
-# fi
+if grep -q "version \"$V_VERSION\"" Formula/xray.rb; then
+    echo "It is already the latest version!"
+    ALREADY_LATEST="true"
+fi
 
 echo "parser xray download url"
 echo ""
@@ -88,7 +88,12 @@ echo ""
 
 git config --local user.name "actions"
 git config --local user.email "action@github.com"
-git commit -am "Automated update xray-core version v$V_VERSION"
+
+if [ $ALREADY_LATEST ]; then
+    git commit -am "Automated update geoip.dat or geosite.dat"
+else
+    git commit -am "Automated update xray-core version v$V_VERSION"
+fi
 git push
 
 echo "update repo done."
