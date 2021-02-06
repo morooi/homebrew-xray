@@ -1,5 +1,5 @@
 class Xray < Formula
-  desc "Xray, Penetrates Everything. Also the best v2ray-core, with XTLS support. Fully compatible configuration."
+  desc "Xray, Penetrates Everything. Also the best v2ray-core, with XTLS support. Fully compatible configuration"
   homepage "https://xtls.github.io/"
   if Hardware::CPU.intel?
     url "https://github.com/XTLS/Xray-core/releases/download/v1.2.4/Xray-macos-64.zip"
@@ -40,44 +40,42 @@ class Xray < Formula
     resource("geosite").stage do
       pkgshare.install "geosite.dat"
     end
+  end
 
+  def caveats
+    <<~EOS
+      Create your config at #{etc}/xray/config.json
+      You can get some example configs at https://github.com/XTLS/Xray-examples
+    EOS
   end
 
   plist_options manual: "xray run -c #{HOMEBREW_PREFIX}/etc/xray/config.json"
 
-  def plist; 
-
-  <<~EOS
-    <?xml version="1.0" encoding="UTF-8"?>
-    <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
-    <plist version="1.0">
-      <dict>
-        <key>Label</key>
-        <string>#{plist_name}</string>
-        <key>KeepAlive</key>
-        <true/>
-        <key>RunAtLoad</key>
-        <true/>
-        <key>ProgramArguments</key>
-        <array>
-          <string>#{bin}/xray</string>
-          <string>run</string>
-          <string>-c</string>
-          <string>#{etc}/xray/config.json</string>
-        </array>
-      </dict>
-    </plist>
-  EOS
+  def plist
+    <<~EOS
+      <?xml version="1.0" encoding="UTF-8"?>
+      <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+      <plist version="1.0">
+        <dict>
+          <key>Label</key>
+          <string>#{plist_name}</string>
+          <key>KeepAlive</key>
+          <true/>
+          <key>RunAtLoad</key>
+          <true/>
+          <key>ProgramArguments</key>
+          <array>
+            <string>#{bin}/xray</string>
+            <string>run</string>
+            <string>-c</string>
+            <string>#{etc}/xray/config.json</string>
+          </array>
+        </dict>
+      </plist>
+    EOS
   end
 
   test do
     system "#{bin}/xray", "version"
-  end
-
-  def caveats
-  <<~EOS
-    Create your config at #{etc}/xray/config.json
-    You can get some example configs at https://github.com/XTLS/Xray-examples
-  EOS
   end
 end
