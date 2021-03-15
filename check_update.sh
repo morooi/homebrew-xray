@@ -1,17 +1,6 @@
 #!/bin/bash
 
-loop_parser(){
-    while true
-    do
-        result=$(curl -s -H "Accept: application/vnd.github.v3+json" https://api.github.com/repos/xtls/xray-core/releases/latest | grep "$1" | cut -d '"' -f 4)
-        if [ -n "$result" ]; then
-            echo "$result"
-            break
-        fi
-    done
-}
-
-V_VERSION=$( loop_parser "tag_name" )
+V_VERSION=$(curl -s -H 'Accept: application/vnd.github.v3+json' https://api.github.com/repos/XTLS/Xray-core/tags | grep -Eom 1 'v[0-9]+\.[0-9]+\.[0-9]+')
 V_VERSION="${V_VERSION:1}"
 
 echo "latest version: $V_VERSION"
@@ -24,8 +13,8 @@ fi
 echo "parser xray download url"
 echo ""
 
-INTEL_DOWNLOAD_URL=$( loop_parser 'browser_download_url.*macos-64.zip"$' )
-APPLE_SILICON_DOWNLOAD_URL=$( loop_parser 'browser_download_url.*macos-arm64-v8a.zip"$' )
+INTEL_DOWNLOAD_URL="https://github.com/XTLS/Xray-core/releases/download/v${V_VERSION}/Xray-macos-64.zip"
+APPLE_SILICON_DOWNLOAD_URL="https://github.com/XTLS/Xray-core/releases/download/v${V_VERSION}/Xray-macos-arm64-v8a.zip"
 
 echo "Intel version download url: $INTEL_DOWNLOAD_URL"
 echo "Apple Silicon version download url: $APPLE_SILICON_DOWNLOAD_URL"
