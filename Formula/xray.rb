@@ -8,7 +8,7 @@ class Xray < Formula
     url "https://github.com/XTLS/Xray-core/releases/download/v1.4.3/Xray-macos-arm64-v8a.zip"
     sha256 "17d007ba67be2ef1630762b105f89bc1ea08e6709a877bb618cc1523cca51e70" # Apple Silicon
   end
-  version "1.4.2"
+  version "1.4.3"
   license "MPL-2.0"
 
   resource "config" do
