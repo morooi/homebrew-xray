@@ -18,12 +18,12 @@ class Xray < Formula
 
   resource "geoip" do
     url "https://raw.githubusercontent.com/Loyalsoldier/v2ray-rules-dat/release/geoip.dat"
-    sha256 "3ce752f256d12b79f87c48013e79cdac8dce23179e2123695517e1b09ed5783d" # GeoIP
+    sha256 "6f529312eeb8477f66b1828a35844b96f4d831e6f1b361e57a4f4892b733c247" # GeoIP
   end
 
   resource "geosite" do
     url "https://raw.githubusercontent.com/Loyalsoldier/v2ray-rules-dat/release/geosite.dat"
-    sha256 "7615ec4962a0baa61822e1b9e6a87f79fb81cb5236f6bdfa114a974d14a6672f" # GeoSite
+    sha256 "6d4bbb7490721f1cad528c3b59d78a7f2d22d0932b0f56bea427b56cd1cb4723" # GeoSite
   end
 
   def install
