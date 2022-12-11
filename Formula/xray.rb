@@ -2,13 +2,13 @@ class Xray < Formula
   desc "Xray, Penetrates Everything. Also the best v2ray-core, with XTLS support. Fully compatible configuration"
   homepage "https://xtls.github.io/"
   if Hardware::CPU.intel?
-    url "https://github.com/XTLS/Xray-core/releases/download/v1.6.5/Xray-macos-64.zip"
-    sha256 "29a2ddccd62b0f8a1d2de90f20f9207af31e8657c591a7aaa53b5a5137194641" # Intel
+    url "https://github.com/XTLS/Xray-core/releases/download/v1.6.6/Xray-macos-64.zip"
+    sha256 "45689af9cdd30bb20b8dd6debf08c3dd04c4434db3b52b17f98b41378d627cf5" # Intel
   else
-    url "https://github.com/XTLS/Xray-core/releases/download/v1.6.5/Xray-macos-arm64-v8a.zip"
-    sha256 "0db42621dcc5687492f98c93f8c666882bb4ab269dd59df58e39402804e56a9c" # Apple Silicon
+    url "https://github.com/XTLS/Xray-core/releases/download/v1.6.6/Xray-macos-arm64-v8a.zip"
+    sha256 "037a1f2d2b285d1aa432597f633a52778c50b83d85d8513d9aba79c715d74279" # Apple Silicon
   end
-  version "1.6.5"
+  version "1.6.6"
   license "MPL-2.0"
 
   resource "config" do
@@ -18,12 +18,12 @@ class Xray < Formula
 
   resource "geoip" do
     url "https://raw.githubusercontent.com/Loyalsoldier/v2ray-rules-dat/release/geoip.dat"
-    sha256 "f74a9cb0a2e33aaec5bb6d1c2a9a17c6a98095542ae9cf4c87d38e7bf1e2f039" # GeoIP
+    sha256 "e6cad659c035294784718cd917c272ebe2060adf6967a72e603854b8ffb7b5e8" # GeoIP
   end
 
   resource "geosite" do
     url "https://raw.githubusercontent.com/Loyalsoldier/v2ray-rules-dat/release/geosite.dat"
-    sha256 "51e2f3f6027f14696039005ab148380e2a1a828777856c1df5b77e596899ca6b" # GeoSite
+    sha256 "aa98a7be0552de4354119ca242ad23dd79ce6bcbc4290bf873109a7bdd893bc0" # GeoSite
   end
 
   def install
