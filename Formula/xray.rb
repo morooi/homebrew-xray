@@ -12,7 +12,7 @@ class Xray < Formula
   license "MPL-2.0"
 
   resource "config" do
-    url "https://ghproxy.com/https://raw.githubusercontent.com/XTLS/Xray-examples/main/VLESS-TCP-XTLS-WHATEVER/config_client/vless_tcp_xtls.json"
+    url "https://ghproxy.com/https://raw.githubusercontent.com/XTLS/Xray-examples/main/VLESS-TCP-XTLS-Vision/config_client.json"
     sha256 "1926e7e9bc7d84d8ef5783aec1dcd5c386b9c3e6cb36ad7adf880564d2ad7a77" # Config
   end
 
@@ -30,7 +30,7 @@ class Xray < Formula
     bin.install "xray"
 
     resource("config").stage do
-      pkgetc.install "vless_tcp_xtls.json" => "config.json"
+      pkgetc.install "config_client.json" => "config.json"
     end
 
     resource("geoip").stage do
