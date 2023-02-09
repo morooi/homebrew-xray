@@ -23,7 +23,7 @@ echo "start downloading..."
 
 curl -s -L "$INTEL_DOWNLOAD_URL" > Xray-macos-64.zip || { echo 'Intel version file download failed!' ; exit 1; }
 curl -s -L "$APPLE_SILICON_DOWNLOAD_URL" > Xray-macos-arm64-v8a.zip || { echo 'Apple Silicon version file download failed!' ; exit 1; }
-curl -s -L "https://ghproxy.com/https://raw.githubusercontent.com/XTLS/Xray-examples/main/VLESS-TCP-XTLS-Vision/config_client.json" > config_client.json || { echo 'Config file download failed!' ; exit 1; }
+curl -s -L "https://raw.githubusercontent.com/XTLS/Xray-examples/main/VLESS-TCP-XTLS-Vision/config_client.json" > config_client.json || { echo 'Config file download failed!' ; exit 1; }
 curl -s -L "https://raw.githubusercontent.com/Loyalsoldier/v2ray-rules-dat/release/geoip.dat" > geoip.dat || { echo 'geoip.dat download failed!' ; exit 1; }
 curl -s -L "https://raw.githubusercontent.com/Loyalsoldier/v2ray-rules-dat/release/geosite.dat" > geosite.dat || { echo 'geosite.dat download failed!' ; exit 1; }
 
