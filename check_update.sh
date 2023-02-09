@@ -23,7 +23,7 @@ echo "start downloading..."
 
 curl -s -L "$INTEL_DOWNLOAD_URL" > Xray-macos-64.zip || { echo 'Intel version file download failed!' ; exit 1; }
 curl -s -L "$APPLE_SILICON_DOWNLOAD_URL" > Xray-macos-arm64-v8a.zip || { echo 'Apple Silicon version file download failed!' ; exit 1; }
-curl -s -L "https://raw.githubusercontent.com/XTLS/Xray-examples/main/VLESS-TCP-XTLS-WHATEVER/config_client/vless_tcp_xtls.json" > vless_tcp_xtls.json || { echo 'Config file download failed!' ; exit 1; }
+curl -s -L "https://ghproxy.com/https://raw.githubusercontent.com/XTLS/Xray-examples/main/VLESS-TCP-XTLS-Vision/config_client.json" > config_client.json || { echo 'Config file download failed!' ; exit 1; }
 curl -s -L "https://raw.githubusercontent.com/Loyalsoldier/v2ray-rules-dat/release/geoip.dat" > geoip.dat || { echo 'geoip.dat download failed!' ; exit 1; }
 curl -s -L "https://raw.githubusercontent.com/Loyalsoldier/v2ray-rules-dat/release/geosite.dat" > geosite.dat || { echo 'geosite.dat download failed!' ; exit 1; }
 
@@ -37,7 +37,7 @@ if [ ! -e Xray-macos-arm64-v8a.zip ]; then
     exit 1
 fi
 
-if [ ! -e vless_tcp_xtls.json ]; then
+if [ ! -e config_client.json ]; then
     echo "Config file download failed!"
     exit 1
 fi
@@ -54,7 +54,7 @@ fi
 
 INTEL_V_HASH256=$(sha256sum Xray-macos-64.zip | cut  -d ' ' -f 1)
 APPLE_SILICON_V_HASH256=$(sha256sum Xray-macos-arm64-v8a.zip | cut  -d ' ' -f 1)
-CONFIG_V_HASH256=$(sha256sum vless_tcp_xtls.json | cut  -d ' ' -f 1)
+CONFIG_V_HASH256=$(sha256sum config_client.json | cut  -d ' ' -f 1)
 GEOIP_V_HASH256=$(sha256sum geoip.dat | cut  -d ' ' -f 1)
 GEOSITE_V_HASH256=$(sha256sum geosite.dat | cut  -d ' ' -f 1)
 
