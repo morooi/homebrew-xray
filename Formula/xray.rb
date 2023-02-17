@@ -49,30 +49,10 @@ class Xray < Formula
     EOS
   end
 
-  plist_options manual: "xray run -c #{HOMEBREW_PREFIX}/etc/xray/config.json"
-
-  def plist
-    <<~EOS
-      <?xml version="1.0" encoding="UTF-8"?>
-      <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
-      <plist version="1.0">
-        <dict>
-          <key>Label</key>
-          <string>#{plist_name}</string>
-          <key>KeepAlive</key>
-          <true/>
-          <key>RunAtLoad</key>
-          <true/>
-          <key>ProgramArguments</key>
-          <array>
-            <string>#{bin}/xray</string>
-            <string>run</string>
-            <string>-c</string>
-            <string>#{etc}/xray/config.json</string>
-          </array>
-        </dict>
-      </plist>
-    EOS
+  service do
+    run [opt_bin/"xray", "run", "--config", "#{etc}/xray/config.json"]
+    run_type :immediate
+    keep_alive true
   end
 
   test do
