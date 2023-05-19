@@ -23,7 +23,7 @@ class Xray < Formula
 
   resource "geosite" do
     url "https://ghproxy.com/https://raw.githubusercontent.com/Loyalsoldier/v2ray-rules-dat/release/geosite.dat"
-    sha256 "077779035b04520ebe31a792df80665229486ae44d3b26886796f7411aa17bb5" # GeoSite
+    sha256 "4c1b19edf5550535c25e19c69b73cf2dcbca74c6f5f36f8bc3ad3b687b617370" # GeoSite
   end
 
   def install
