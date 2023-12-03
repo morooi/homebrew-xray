@@ -60,10 +60,10 @@ GEOSITE_V_HASH256=$(sha256sum geosite.dat | cut  -d ' ' -f 1)
 
 echo "update xray.rb...."
 
-sed -i "s#^\s*url.*-64.*#    url \"https://ghproxy.com/$INTEL_DOWNLOAD_URL\"#g" Formula/xray.rb
+sed -i "s#^\s*url.*-64.*#    url \"$INTEL_DOWNLOAD_URL\"#g" Formula/xray.rb
 sed -i "s#^\s*sha256.*Intel#    sha256 \"$INTEL_V_HASH256\" \# Intel#g" Formula/xray.rb
 
-sed -i "s#^\s*url.*-arm64.*#    url \"https://ghproxy.com/$APPLE_SILICON_DOWNLOAD_URL\"#g" Formula/xray.rb
+sed -i "s#^\s*url.*-arm64.*#    url \"$APPLE_SILICON_DOWNLOAD_URL\"#g" Formula/xray.rb
 sed -i "s#^\s*sha256.*Silicon#    sha256 \"$APPLE_SILICON_V_HASH256\" \# Apple Silicon#g" Formula/xray.rb
 
 sed -i "s#^\s*sha256.*Config#    sha256 \"$CONFIG_V_HASH256\" \# Config#g" Formula/xray.rb
