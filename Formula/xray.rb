@@ -12,17 +12,17 @@ class Xray < Formula
   license "MPL-2.0"
 
   resource "config" do
-    url "https://ghproxy.com/https://raw.githubusercontent.com/XTLS/Xray-examples/main/VLESS-TCP-XTLS-Vision/config_client.json"
+    url "https://raw.githubusercontent.com/XTLS/Xray-examples/main/VLESS-TCP-XTLS-Vision/config_client.json"
     sha256 "6c617c0fae4200f4df241cc184d0de15e9845e448aa6b27bbfe807daef6498e6" # Config
   end
 
   resource "geoip" do
-    url "https://ghproxy.com/https://raw.githubusercontent.com/Loyalsoldier/v2ray-rules-dat/release/geoip.dat"
+    url "https://raw.githubusercontent.com/Loyalsoldier/v2ray-rules-dat/release/geoip.dat"
     sha256 "2341c8327a320c34f0f97120c609a843ebb336345358ec200485367b4427e50e" # GeoIP
   end
 
   resource "geosite" do
-    url "https://ghproxy.com/https://raw.githubusercontent.com/Loyalsoldier/v2ray-rules-dat/release/geosite.dat"
+    url "https://raw.githubusercontent.com/Loyalsoldier/v2ray-rules-dat/release/geosite.dat"
     sha256 "67e51f8e572837d6fde19234717d043a87861f445538f87406eb2da2d365fc6d" # GeoSite
   end
 
