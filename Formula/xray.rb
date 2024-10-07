@@ -27,7 +27,7 @@ class Xray < Formula
   end
 
   def install
-    bin.install "xray"
+    libexec.install "xray"
 
     execpath = libexec/name
     (bin/"xray").write_env_script execpath,
