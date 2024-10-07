@@ -29,6 +29,10 @@ class Xray < Formula
   def install
     bin.install "xray"
 
+    execpath = libexec/name
+    (bin/"xray").write_env_script execpath,
+      XRAY_LOCATION_ASSET: "${XRAY_LOCATION_ASSET:-#{pkgshare}}"
+
     resource("config").stage do
       pkgetc.install "config_client.json" => "config.json"
     end
