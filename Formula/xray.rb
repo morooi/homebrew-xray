@@ -34,7 +34,7 @@ class Xray < Formula
       XRAY_LOCATION_ASSET: "${XRAY_LOCATION_ASSET:-#{pkgshare}}"
 
     resource("config").stage do
-      pkgetc.install "config_client.json" => "config.json"
+      pkgetc.install "config_client.jsonc" => "config.jsonc"
     end
 
     resource("geoip").stage do
@@ -48,13 +48,13 @@ class Xray < Formula
 
   def caveats
     <<~EOS
-      Create your config at #{etc}/xray/config.json
+      Create your config at #{etc}/xray/config.jsonc
       You can get some example configs at https://github.com/XTLS/Xray-examples
     EOS
   end
 
   service do
-    run [opt_bin/"xray", "run", "--config", "#{etc}/xray/config.json"]
+    run [opt_bin/"xray", "run", "--config", "#{etc}/xray/config.jsonc"]
     run_type :immediate
     keep_alive true
   end
