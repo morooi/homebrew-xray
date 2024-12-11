@@ -3,7 +3,7 @@ class Xray < Formula
   homepage "https://xtls.github.io/"
   if Hardware::CPU.intel?
     url "https://github.com/XTLS/Xray-core/releases/download/v24.11.30/Xray-macos-64.zip"
-    sha256 "bb9d1f1563a173a86aac6136db53261ecd3ee2a0a357968273edbd69d976d938" # Intel
+    sha256 "3590bcb90a75c32ba8b10d692d26838caedbc267a57db23931694abc9598c873" # Intel
   else
     url "https://github.com/XTLS/Xray-core/releases/download/v24.11.30/Xray-macos-arm64-v8a.zip"
     sha256 "8580be19d2356b1679ff2d1e77c7999d674bd69d16e36a9edad42cd7be8ad329" # Apple Silicon
