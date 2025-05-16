@@ -2,13 +2,13 @@ class Xray < Formula
   desc "Xray, Penetrates Everything. Also the best v2ray-core, with XTLS support. Fully compatible configuration"
   homepage "https://xtls.github.io/"
   if Hardware::CPU.intel?
-    url "https://github.com/XTLS/Xray-core/releases/download/v25.4.30/Xray-macos-64.zip"
-    sha256 "2f0b74f2a8a8de636f04ed7eec73ede80550b5e8078657e555f996940100cd19" # Intel
+    url "https://github.com/XTLS/Xray-core/releases/download/v/Xray-macos-64.zip"
+    sha256 "0019dfc4b32d63c1392aa264aed2253c1e0c2fb09216f8e2cc269bbfb8bb49b5" # Intel
   else
-    url "https://github.com/XTLS/Xray-core/releases/download/v25.4.30/Xray-macos-arm64-v8a.zip"
-    sha256 "2f0b74f2a8a8de636f04ed7eec73ede80550b5e8078657e555f996940100cd19" # Apple Silicon
+    url "https://github.com/XTLS/Xray-core/releases/download/v/Xray-macos-arm64-v8a.zip"
+    sha256 "0019dfc4b32d63c1392aa264aed2253c1e0c2fb09216f8e2cc269bbfb8bb49b5" # Apple Silicon
   end
-  version "25.4.30"
+  version ""
   license "MPL-2.0"
 
   resource "config" do
