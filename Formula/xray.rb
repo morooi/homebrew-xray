@@ -13,7 +13,7 @@ class Xray < Formula
 
   resource "config" do
     url "https://raw.githubusercontent.com/XTLS/Xray-examples/main/VLESS-TCP-XTLS-Vision/config_client.jsonc"
-    sha256 "6c617c0fae4200f4df241cc184d0de15e9845e448aa6b27bbfe807daef6498e6" # Config
+    sha256 "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855" # Config
   end
 
   resource "geoip" do
@@ -23,7 +23,7 @@ class Xray < Formula
 
   resource "geosite" do
     url "https://raw.githubusercontent.com/Loyalsoldier/v2ray-rules-dat/release/geosite.dat"
-    sha256 "63fcda0ea182bd23b03778e11f26a0e0998886e6641c3784d1eb7fa0eae86548" # GeoSite
+    sha256 "209bb786d37278331f0c25af66dd0b37da9cd343bea1cc3c64c73c88a99140db" # GeoSite
   end
 
   def install
