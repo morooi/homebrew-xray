@@ -13,7 +13,7 @@ class Xray < Formula
 
   resource "config" do
     url "https://raw.githubusercontent.com/XTLS/Xray-examples/main/VLESS-TCP-XTLS-Vision/config_client.jsonc"
-    sha256 "6c617c0fae4200f4df241cc184d0de15e9845e448aa6b27bbfe807daef6498e6" # Config
+    sha256 "842327f852ce0d1154bfad8d8c42ed27083fb252af83319028e632aa110c7b36" # Config
   end
 
   resource "geoip" do
