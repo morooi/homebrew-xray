@@ -6,7 +6,7 @@ class Xray < Formula
     sha256 "9e0e06914616700fc371cfb4f1978d697d943fc533e6e42dcfd498b5cde65fcd" # Intel
   else
     url "https://github.com/XTLS/Xray-core/releases/download/v25.6.8/Xray-macos-arm64-v8a.zip"
-    sha256 "079aa62c88ae5966df86fb4e95c38a7b38da7aee739cc62b331d39c95df952e9" # Apple Silicon
+    sha256 "c0b4a420073a6e969c47f5ec843b0162db9eb85f37cb3f49ba905d8ae722a8d4" # Apple Silicon
   end
   version "25.6.8"
   license "MPL-2.0"
