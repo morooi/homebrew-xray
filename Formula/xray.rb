@@ -3,16 +3,16 @@ class Xray < Formula
   homepage "https://xtls.github.io/"
   
   on_intel do
-    url "https://github.com/XTLS/Xray-core/releases/download/v25.9.5/Xray-macos-64.zip"
-    sha256 "b29fb7e71768a487ee4e68e46ab66212f237298c55da9359dadfa4ee514bd991" # Intel
+    url "https://github.com/XTLS/Xray-core/releases/download/v25.9.10/Xray-macos-64.zip"
+    sha256 "4d79b1f4d74d623fb392970207fa6243d709d7bcb96c9606717fdab069a7ed1e" # Intel
   end
 
   on_arm do
-    url "https://github.com/XTLS/Xray-core/releases/download/v25.9.5/Xray-macos-arm64-v8a.zip"
-    sha256 "0202198a72b9f2f1ae0695509d5ad22bad6bed3825fe8bf0847f4d60b2613e9e" # Apple Silicon
+    url "https://github.com/XTLS/Xray-core/releases/download/v25.9.10/Xray-macos-arm64-v8a.zip"
+    sha256 "b3883d772458d546832603a6630925c30f89a52a21e77e80f05a7378ac8b4171" # Apple Silicon
   end
   
-  version "25.9.5"
+  version "25.9.10"
   license "MPL-2.0"
 
   resource "config" do
