@@ -4,12 +4,12 @@ class Xray < Formula
   
   on_intel do
     url "https://github.com/XTLS/Xray-core/releases/download/v26.4.17/Xray-macos-64.zip"
-    sha256 "0019dfc4b32d63c1392aa264aed2253c1e0c2fb09216f8e2cc269bbfb8bb49b5" # Intel
+    sha256 "e16e81979101a6afaedec43ca268be6a152cc8cd8fa5abc72f655bb793ae59c7" # Intel
   end
 
   on_arm do
     url "https://github.com/XTLS/Xray-core/releases/download/v26.4.17/Xray-macos-arm64-v8a.zip"
-    sha256 "0019dfc4b32d63c1392aa264aed2253c1e0c2fb09216f8e2cc269bbfb8bb49b5" # Apple Silicon
+    sha256 "d68aac7ea1734447608dc3d4730e85c32186a18eb4d4d3b5086fd075d2371cba" # Apple Silicon
   end
   
   version "26.4.17"
