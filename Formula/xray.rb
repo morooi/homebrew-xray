@@ -9,7 +9,7 @@ class Xray < Formula
 
   on_arm do
     url "https://github.com/XTLS/Xray-core/releases/download/v26.6.27/Xray-macos-arm64-v8a.zip"
-    sha256 "ec426ba25083b97093a1045196f189ba453582b468484ffaacecf18ba4a4a708" # Apple Silicon
+    sha256 "5b63cf477b4281dc0d9d3af4d7b87391ab868a842b430e9ce8957ea0b60ecab7" # Apple Silicon
   end
   
   version "26.6.27"
