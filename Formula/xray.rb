@@ -9,7 +9,7 @@ class Xray < Formula
 
   on_arm do
     url "https://github.com/XTLS/Xray-core/releases/download/v26.9.9/Xray-macos-arm64-v8a.zip"
-    sha256 "0019dfc4b32d63c1392aa264aed2253c1e0c2fb09216f8e2cc269bbfb8bb49b5" # Apple Silicon
+    sha256 "b7cf765d60ccc703853d4218c49a1eacc5bca764543b9540bdeaf45c951afc7d" # Apple Silicon
   end
   
   version "26.9.9"
@@ -27,7 +27,7 @@ class Xray < Formula
 
   resource "geosite" do
     url "https://raw.githubusercontent.com/Loyalsoldier/v2ray-rules-dat/release/geosite.dat"
-    sha256 "2064a1a4074e145d5022ac49f2c30341e7b7cb6c7948da4fdca973b3fa8411b2" # GeoSite
+    sha256 "110be548fd2c2d84249310842667f996e01ab5c753d526717a0f434a5a08e5ea" # GeoSite
   end
 
   def install
