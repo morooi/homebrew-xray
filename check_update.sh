@@ -1,7 +1,21 @@
 #!/bin/bash
 
-V_VERSION=$(curl -s -H 'Accept: application/vnd.github.v3+json' https://api.github.com/repos/XTLS/Xray-core/tags | grep -Eom 1 'v[0-9]+\.[0-9]+\.[0-9]+')
-V_VERSION="${V_VERSION:1}"
+TAGS_RESPONSE=$(mktemp)
+trap 'rm -f "$TAGS_RESPONSE"' EXIT
+
+if ! curl -fsSL --retry 3 --retry-delay 2 --retry-all-errors \
+    -H 'Accept: application/vnd.github.v3+json' \
+    'https://api.github.com/repos/XTLS/Xray-core/tags?per_page=100' \
+    -o "$TAGS_RESPONSE"; then
+    echo "failed to fetch Xray-core tags from GitHub" >&2
+    exit 1
+fi
+
+V_TAG=$(jq -er 'first(.[] | .name | select(test("^v[0-9]+\\.[0-9]+\\.[0-9]+$")))' "$TAGS_RESPONSE") || {
+    echo "failed to parse a stable Xray-core version from GitHub tags" >&2
+    exit 1
+}
+V_VERSION="${V_TAG#v}"
 
 echo "latest version: $V_VERSION"
 
